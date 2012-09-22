@@ -28,6 +28,7 @@ p {
 }
 
 #logo { padding: 0; }
+#logo-top a,
 #logo a {
 	display: block;
 	text-indent: -9999em;
@@ -278,4 +279,74 @@ code {
 .jsdoc .class-description {
 	font-size: 1.2em;
 	font-style: italic;
+}
+
+#mobile-header {
+  display: none;
+}
+
+@media screen and (max-width: 520px) {
+
+  #mobile-header {
+    display: block;
+    background: #111926;
+    position: relative;
+  }
+
+  #logo-top a {
+    background-position: 5% 0
+  }
+
+  #link-to-nav {
+    display: inline-block;
+    position: absolute;
+    margin-top: -1em;
+    right: 1.5em;
+    top: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.666em 1.333em;
+    text-decoration: none;
+    background: #061426;
+    background: -webkit-linear-gradient(top, #272A33, #061426);
+    background: -moz-linear-gradient(top, #272A33, #061426);
+    background: -o-linear-gradient(top, #272A33, #061426);
+    background: linear-gradient(top, #272A33, #061426);
+    border-radius: 0.333em;
+    border: 1px solid #020E26;
+    box-shadow: inset 0 0 3px rgba(255,255,255,0.333);
+  }
+
+  #side {
+    display: none;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  #nav {
+    background: #111926;
+    position: static;
+    width: auto;
+  }
+
+  #nav .menuHeading {
+    background-position: 95% 10px;
+  }
+
+  #content {
+    font-size: 1.25em;
+    margin: 0 auto;
+    padding: 0 0 30px;
+    width: 95%;
+  }
+
+  #content img {
+    max-width: 100%;
+
+  }
+
+
 }
