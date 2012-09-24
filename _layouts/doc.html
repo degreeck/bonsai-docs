@@ -11,6 +11,32 @@
 
 <body>
 
+  <header id="mobile-header">
+    <h1 id="logo-top"><a href="http://bonsaijs.org/">Bonsai</a></h1>
+    <a id="link-to-nav" href="#nav">Menu</a>
+  </header>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<div id="content" class="{% if page.categories contains 'jsdoc' %}jsdoc{% endif %}">
+
+		<h1>
+			{{page.title}}
+		</h1>
+
+    {% if page.relatedLinks and page.relatedLinks != empty %}
+      <div id="relatedLinks">
+        <h3>Related:</h3>
+        {% for link in page.relatedLinks %}
+            <a class="overview" href="{{link}}">{{page.relatedNames[forloop.index0]}} &raquo;</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+		{{content}}
+		<br style="clear:both;"/>
+	</div>
+
   <div id="side"></div>
 	<div id="nav">
 		<h1 id="logo"><a href="http://bonsaijs.org/">Bonsai</a></h1>
@@ -43,7 +69,6 @@
 		</ul>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script>
 	(function() {
     // Make collapsible menu sections:
@@ -85,26 +110,6 @@
 
 	}());
 	</script>
-
-	<div id="content" class="{% if page.categories contains 'jsdoc' %}jsdoc{% endif %}">
-
-		<h1>
-			{{page.title}}
-		</h1>
-
-    {% if page.relatedLinks and page.relatedLinks != empty %}
-      <div id="relatedLinks">
-        <h3>Related:</h3>
-        {% for link in page.relatedLinks %}
-            <a class="overview" href="{{link}}">{{page.relatedNames[forloop.index0]}} &raquo;</a>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-		{{content}}
-		<br style="clear:both;"/>
-	</div>
-
 	<script src="{{site.baseurl}}/lib/ace/ace-noconflict.js"></script>
 	<script src="{{site.baseurl}}/lib/bonsai/bonsai.iframe.js"></script>
 	<script src="{{site.baseurl}}/assets/doc.js"></script>
